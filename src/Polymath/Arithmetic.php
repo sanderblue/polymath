@@ -9,7 +9,7 @@ class Arithmetic
         return $x + $y;
     }
 
-    public function substract($x, $y)
+    public function subtract($x, $y)
     {
         return $x - $y;
     }
