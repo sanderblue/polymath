@@ -4,12 +4,12 @@ namespace Polymath;
 
 class Constants
 {
-    public function exp($e)
+    public static function exp($e)
     {
         return exp($e);
     }
 
-    public function pi($x)
+    public function pi($x = null)
     {
         return pi($x);
     }

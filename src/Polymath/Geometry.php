@@ -4,6 +4,16 @@ namespace Polymath;
 
 class Geometry
 {
+    private $constants;
+
+    public function __construct(Constants $constants = null) 
+    {
+        if ($constants === null) {
+            $constants = new Constants();
+        }
+        $this->constants = $constants;
+    }
+
     public function perimeterRectangle($x, $y)
     {
         return 2 * $x + 2 * $y;
@@ -21,7 +31,7 @@ class Geometry
 
     public function areaCircle($r)
     {
-        return pi() * $r * $r;
+        return $this->constants->pi() * $r * $r;
     }
 
     public function areaEqTriangle($b, $h)
