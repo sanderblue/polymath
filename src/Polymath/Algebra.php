@@ -4,6 +4,14 @@ namespace Polymath;
 
 class Algebra
 {
+
+    // Algebra Constants
+    public function exp($e)
+    {
+        return exp($e);
+    }
+
+    // Algebra functions
     public function sqrt($x)
     {
         return sqrt($x);

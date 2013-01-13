@@ -6,6 +6,26 @@ use PHPUnit_Framework_TestCase;
 
 class AlgebraTest extends PHPUnit_Framework_TestCase
 {
+
+    /**
+     * Natural logarithm  base constant e
+     *
+     * @dataProvider getTestEData
+     **/
+    public function testE($e, $expected)
+    {
+        $algebra = new \Polymath\Algebra();
+        $result = $algebra->exp($e); // natural logarithm
+        $this->assertEquals($result, $expected, 'Assert the base for natural logarithms e'); 
+    }
+
+    public function getTestEData()
+    {
+        return array(
+            array(1, 2.71828182846)
+        ); 
+    }
+
     /**
      * @dataProvider getTestSqrtData
      **/
@@ -124,3 +144,4 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
         ); 
     }
 }
+
