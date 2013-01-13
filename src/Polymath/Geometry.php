@@ -23,4 +23,9 @@ class Geometry
     {
         return pi() * $r * $r;
     }
+
+    public function areaEqTriangle($b, $h)
+    {
+        return 0.5 * $b * $h;
+    }
 }
