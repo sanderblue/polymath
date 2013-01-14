@@ -14,4 +14,19 @@ class Trigonometry
     {
         return 0.5 * $b * $h;
     }
+
+    public function sin($x)
+    {
+        return sin($x);
+    }
+
+    public function cos($x)
+    {
+        return cos($x);
+    }
+
+    public function tan($x)
+    {
+        return tan($x);
+    }
 }
