@@ -81,4 +81,23 @@ class CirclesTest extends PHPUnit_Framework_TestCase
             array(2, 33.5103216383)
         ); 
     }
+
+    /**
+     * @dataProvider getTestSurfaceAreaCylinderData
+     **/
+    public function testSurfaceAreaCylinder($r, $h, $expected)
+    {
+        $geometry = new \Polymath\Geometry\Circles();
+        $result = $geometry->surfaceAreaCylinder($r, $h);
+        $this->assertEquals($result, $expected, 'Assert the area of a circle with r radius'); 
+    }
+
+    public function getTestSurfaceAreaCylinderData()
+    {
+        // With a given radius, assert the area of a cirle
+        return array(
+            array(1, 1, 6.28318530718),
+            array(2, 2, 25.1327412287)
+        ); 
+    }
 }

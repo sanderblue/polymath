@@ -19,7 +19,7 @@ class Circles
     /**
      * Circle Calculations
      *
-     * @param positive integer $r
+     * @param positive integer $r radius 
      * @return integer $a
      **/
     public function areaCircle($r)
@@ -44,4 +44,15 @@ class Circles
     {
         return $this->constants->pi() * 4/3 * $r * $r * $r;
     } 
+
+    /**
+     * Cylinder Calculations
+     *
+     * @param positive integer $r radius $h height
+     * @return integer $a
+     **/
+    public function surfaceAreaCylinder($r, $h)
+    {
+        return $this->constants->pi() * 2 * $r * $h;
+    }
 }

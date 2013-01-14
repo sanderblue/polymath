@@ -19,12 +19,6 @@ class Polygons
     {
         return $x * $y;
     }
-
-    // unit side triangle
-    public function areaEqTriangle($b, $h)
-    {
-        return 0.5 * $b * $h;
-    }
     
     public function areaTrapezoid($b1, $b2, $h)
     {

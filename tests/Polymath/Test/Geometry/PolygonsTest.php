@@ -66,25 +66,6 @@ class PolygonsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider getTestAreaEqTriangleData
-     **/
-    public function testAreaEqTriangle($b, $h, $expected)
-    {
-        $geometry = new \Polymath\Geometry\Polygons();
-        $result = $geometry->areaEqTriangle($b, $h, $expected);
-        $this->assertEquals($result, $expected, 'Assert the area of a circle with r radius'); 
-    }
-
-    public function getTestAreaEqTriangleData()
-    {
-        // With a given radius, assert the area of a cirle
-        return array(
-            array(1, 2, 1),
-            array(2, 3, 3)
-        ); 
-    }
-
-    /**
      * @dataProvider getTestAreaTrapezoidData
      **/
     public function testAreaTrapezoid($b1, $b2, $h, $expected)
