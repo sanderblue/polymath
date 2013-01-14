@@ -4,7 +4,6 @@ namespace Polymath\Algebra;
 
 class Algebra
 {
-
     // Algebra Constants
     public function exp($e)
     {

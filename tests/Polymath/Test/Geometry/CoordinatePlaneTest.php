@@ -9,7 +9,7 @@ class CoordinatePlaneTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider getTestDistanceData
      **/
-    public function testDistance($x, $y, $d, $expected)
+    public function testDistance($x, $y, $expected)
     {
         $geometry = new \Polymath\Geometry\CoordinatePlane();
         $result = $geometry->distance($x, $y);
@@ -19,9 +19,9 @@ class CoordinatePlaneTest extends PHPUnit_Framework_TestCase
     public function getTestDistanceData()
     {
         return array(
-            array(1, 1, '', 0),
-            array(2, 3, '', 1),
-            array(3, 5, '', 2)
+            array(1, 1, 0),
+            array(2, 3, 1),
+            array(3, 5, 2)
         ); 
     }
 }

@@ -12,7 +12,7 @@ class CirclesTest extends PHPUnit_Framework_TestCase
     public function testCircumCircle($r, $expected)
     {
         $geometry = new \Polymath\Geometry\Circles();
-        $result = $geometry->circumCircle($r, pi() * 2 * $r);
+        $result = $geometry->circumCircle($r);
         $this->assertEquals($result, $expected, 'Assert the circumference of a circle with radius r'); 
     }
 
@@ -31,7 +31,7 @@ class CirclesTest extends PHPUnit_Framework_TestCase
     public function testAreaCircle($r, $expected)
     {
         $geometry = new \Polymath\Geometry\Circles();
-        $result = $geometry->areaCircle($r, pi() * $r * $r);
+        $result = $geometry->areaCircle($r);
         $this->assertEquals($result, $expected, 'Assert the area of a circle with r radius'); 
     }
 
