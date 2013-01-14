@@ -31,5 +31,17 @@ class Circles
     public function circumCircle($r)
     {
         return $this->constants->pi() * 2 * $r;
+    }
+
+    // surface area of a sphere 
+    public function surfaceAreaSphere($r)
+    {
+        return $this->constants->pi() * 4 * $r * $r;
+    }
+
+    // volume of a sphere 
+    public function volumeSphere($r)
+    {
+        return $this->constants->pi() * 4/3 * $r * $r * $r;
     } 
 }
