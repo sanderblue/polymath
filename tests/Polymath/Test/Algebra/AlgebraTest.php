@@ -27,6 +27,44 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider getTestSquareData
+     **/
+    public function testSquare($x, $expected)
+    {
+        $algebra = new \Polymath\Algebra\Algebra();
+        $result = $algebra->square($x);
+        $this->assertEquals($result, $expected, 'Assert the square of x'); 
+    }
+
+    public function getTestSquareData()
+    {
+        return array(
+            array(1, 1),
+            array(4, 16),
+            array(9, 81)
+        ); 
+    }
+
+    /**
+     * @dataProvider getTestCubedData
+     **/
+    public function testCubed($x, $expected)
+    {
+        $algebra = new \Polymath\Algebra\Algebra();
+        $result = $algebra->cubed($x);
+        $this->assertEquals($result, $expected, 'Assert x cubed'); 
+    }
+
+    public function getTestCubedData()
+    {
+        return array(
+            array(1, 1),
+            array(2, 8),
+            array(3, 27)
+        ); 
+    }
+
+    /**
      * @dataProvider getTestSqrtData
      **/
     public function testSqrt($x, $expected)

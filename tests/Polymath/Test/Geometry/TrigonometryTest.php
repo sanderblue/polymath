@@ -7,6 +7,23 @@ use PHPUnit_Framework_TestCase;
 class TrigonometryTest extends PHPUnit_Framework_TestCase
 {
 	/**
+     * @dataProvider getTestFundamentalIdentityData
+     **/
+    public function testFundamentalIdentity($a, $expected)
+    {
+        $geometry = new \Polymath\Geometry\Trigonometry();
+        $result = $geometry->fundamentalIdentity($a);
+        $this->assertEquals($result, $expected, 'Assert the trigonometry fundamental identity'); 
+    }
+
+    public function getTestFundamentalIdentityData()
+    {
+        return array(
+            array(1, 1)
+        ); 
+    }
+
+	/**
      * Trigonometry Calculations
      *
      * @param positive integer $b base

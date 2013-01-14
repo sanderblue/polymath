@@ -5,7 +5,15 @@ namespace Polymath\Geometry;
 class Trigonometry
 {
 	/**
-     * trigonometry Calculations
+     * Trigonometry Identities
+     **/
+	public function fundamentalIdentity($a)
+    {
+        return sin($a)*sin($a) + cos($a)*cos($a); // equals 1
+    }
+
+	/**
+     * Trigonometry Calculations
      *
      * @param positive integer $b base
      * @param positive integer $h height

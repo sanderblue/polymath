@@ -11,6 +11,16 @@ class Algebra
     }
 
     // Algebra functions
+    public function square($x)
+    {
+        return pow($x, 2);
+    }
+
+    public function cubed($x)
+    {
+        return pow($x, 3);
+    }
+
     public function sqrt($x)
     {
         return sqrt($x);
