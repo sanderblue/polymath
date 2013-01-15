@@ -27,6 +27,24 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Surface Temperature of the Sun in Kelvin (K)
+     *
+     * @dataProvider getTestSurfaceTempSunData
+     **/
+    public function testSurfaceTempSun($tempSun, $expected)
+    {
+        $solarsystemdata = new \Polymath\AstronomicalData\SolarSystemData();
+        $result = $solarsystemdata->surfaceTempSun($tempSun, $expected);
+        $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
+    }
+
+    public function getTestSurfaceTempSunData()
+    {
+        return array(
+            array(6000, 6000)
+        );
+    }
+    /**
      * Surface Temperature of Earth in Kelvin (K)
      *
      * @dataProvider getTestSurfaceTempEarthData

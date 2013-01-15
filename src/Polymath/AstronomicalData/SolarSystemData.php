@@ -15,6 +15,16 @@ class SolarSystemData
     }
 
     /**
+     * Surface Temperature of the Sun in Kelvin(K)
+     * 
+     * @dataProvider getSurfaceTempSunData
+     **/
+    public function surfaceTempSun($tempSun)
+    {
+        return 6000;
+    }
+
+    /**
      * Surface Temperature of Earth in Kelvin(K)
      * 
      * @dataProvider getSurfaceTempEarthData
