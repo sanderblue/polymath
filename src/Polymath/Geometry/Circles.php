@@ -24,7 +24,7 @@ class Circles
      **/
     public function areaCircle($r)
     {
-        return $this->constants->pi() * $r * $r;
+        return $this->constants->pi() * pow($r, 2);
     }
 
     // circumference 
@@ -36,13 +36,13 @@ class Circles
     // surface area of a sphere 
     public function surfaceAreaSphere($r)
     {
-        return $this->constants->pi() * 4 * $r * $r;
+        return $this->constants->pi() * 4 * pow($r, 2);
     }
 
     // volume of a sphere 
     public function volumeSphere($r)
     {
-        return $this->constants->pi() * 4/3 * $r * $r * $r;
+        return $this->constants->pi() * 4/3 * pow($r, 3);
     } 
 
     /**
@@ -54,5 +54,10 @@ class Circles
     public function surfaceAreaCylinder($r, $h)
     {
         return $this->constants->pi() * 2 * $r * $h;
+    }
+
+    public function volumeCylinder($r, $h)
+    {
+        return $this->constants->pi() * pow($r, 2) * $h;
     }
 }

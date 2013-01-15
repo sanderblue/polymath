@@ -89,7 +89,7 @@ class CirclesTest extends PHPUnit_Framework_TestCase
     {
         $geometry = new \Polymath\Geometry\Circles();
         $result = $geometry->surfaceAreaCylinder($r, $h);
-        $this->assertEquals($result, $expected, 'Assert the area of a circle with r radius'); 
+        $this->assertEquals($result, $expected, 'Assert the curved surface area of a cylinder with radius r and height h'); 
     }
 
     public function getTestSurfaceAreaCylinderData()
@@ -98,6 +98,25 @@ class CirclesTest extends PHPUnit_Framework_TestCase
         return array(
             array(1, 1, 6.28318530718),
             array(2, 2, 25.1327412287)
+        ); 
+    }
+
+    /**
+     * @dataProvider getTestVolumeCylinderData
+     **/
+    public function testVolumeCylinder($r, $h, $expected)
+    {
+        $geometry = new \Polymath\Geometry\Circles();
+        $result = $geometry->volumeCylinder($r, $h);
+        $this->assertEquals($result, $expected, 'Assert the volume of a cylinder with r radius and h height'); 
+    }
+
+    public function getTestVolumeCylinderData()
+    {
+        return array(
+            array(1, 1, 3.14159265359),
+            array(2, 2, 25.1327412287),
+            array(3, 4, 113.09733552923)
         ); 
     }
 }
