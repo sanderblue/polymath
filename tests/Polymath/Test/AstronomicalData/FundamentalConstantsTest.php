@@ -47,5 +47,43 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
             array(-0.000000000000000000000000000000000663, -0.000000000000000000000000000000000663)
         ); 
     }
+
+    /**
+     * Avogadro's Number
+     *
+     * @dataProvider getTestAvogadroData
+     **/
+    public function testAvogadro($n, $expected)
+    {
+        $fundamentalconstants = new \Polymath\AstronomicalData\FundamentalConstants();
+        $result = $fundamentalconstants->avogadro($n, $expected);
+        $this->assertEquals($result, $expected, 'Assert Avogadros Number'); 
+    }
+
+    public function getTestAvogadroData($n)
+    {
+        return array(
+            array(6.023E+23, 6.023E+23)
+        ); 
+    }
+
+    /**
+     * Gravitational acceleration on earth (g) in m/sec squared
+     *
+     * @dataProvider getTestGravityData
+     **/
+    public function testGravity($g, $expected)
+    {
+        $fundamentalconstants = new \Polymath\AstronomicalData\FundamentalConstants();
+        $result = $fundamentalconstants->gravity($g, $expected);
+        $this->assertEquals($result, $expected, 'Assert gravitational acceleration g on earth in meters per second squared'); 
+    }
+
+    public function getTestGravityData($g)
+    {
+        return array(
+            array(9.81, 9.81) // m/sec squared
+        ); 
+    }
 }
 
