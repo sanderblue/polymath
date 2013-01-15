@@ -119,4 +119,23 @@ class CirclesTest extends PHPUnit_Framework_TestCase
             array(3, 4, 113.09733552923)
         ); 
     }
+
+    /**
+     * @dataProvider getTestVolumeConeData
+     **/
+    public function testVolumeCone($r, $h, $expected)
+    {
+        $geometry = new \Polymath\Geometry\Circles();
+        $result = $geometry->volumeCone($r, $h);
+        $this->assertEquals($result, $expected, 'Assert the volume of a cylinder with r radius and h height'); 
+    }
+
+    public function getTestVolumeConeData()
+    {
+        return array(
+            array(1, 1, 1.0471975512),
+            array(2, 2, 8.37758040957),
+            array(3, 4, 37.6991118431)
+        ); 
+    }
 }

@@ -60,4 +60,9 @@ class Circles
     {
         return $this->constants->pi() * pow($r, 2) * $h;
     }
+
+    public function volumeCone($r, $h)
+    {
+        return $this->constants->pi() * 1/3 * pow($r, 2) * $h;
+    }
 }
