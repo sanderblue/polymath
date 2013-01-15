@@ -6,7 +6,7 @@ use PHPUnit_Framework_TestCase;
 
 class TrigonometryTest extends PHPUnit_Framework_TestCase
 {
-	/**
+    /**
      * @dataProvider getTestFundamentalIdentityData
      **/
     public function testFundamentalIdentity($a, $expected)
@@ -23,7 +23,7 @@ class TrigonometryTest extends PHPUnit_Framework_TestCase
         ); 
     }
 
-	/**
+    /**
      * Trigonometry Calculations
      *
      * @param positive integer $b base

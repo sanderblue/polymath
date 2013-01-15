@@ -26,3 +26,4 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
         );
     }
 }
+
