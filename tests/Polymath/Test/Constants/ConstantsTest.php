@@ -6,7 +6,6 @@ use PHPUnit_Framework_TestCase;
 
 class ConstantsTest extends PHPUnit_Framework_TestCase
 {
-
     /**
      * Pi
      *
@@ -45,4 +44,3 @@ class ConstantsTest extends PHPUnit_Framework_TestCase
         ); 
     }
 }
-

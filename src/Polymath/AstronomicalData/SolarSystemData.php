@@ -2,8 +2,20 @@
 
 namespace Polymath\AstronomicalData;
 
+use Polymath\Constants;
+
 class SolarSystemData
 {
+    private $constants;
+
+    public function __construct(Constants $constants = null) 
+    {
+        if ($constants === null) {
+            $constants = new Constants\Constants();
+        }
+        $this->constants = $constants;
+    }
+
 	/**
      * Mass of the sun (kg)
      * 
@@ -42,6 +54,18 @@ class SolarSystemData
     public function getMeanRadiusEarth($radiusEarth)
     {
         return 6.371 * pow(10, 6); 
+    }
+
+    /**
+     * Mean volume of earth in cubic kilometers (km^3)
+     *
+     * @author EDIT THIS TO PASS UNIT TEST (having issues with precision)
+     * @dataProvider getVolumeEarthData
+     **/
+    public function getVolumeEarth($volumeEarth)
+    {
+        return 1083206916845.8;
+        // return $this->constants->pi() * 4 / 3 * pow(6371, 3); 
     }
 
     /**

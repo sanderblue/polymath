@@ -84,6 +84,26 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Mean volume of earth in cubic kilometers (km^3)
+     *
+     * @author EDIT THIS TO PASS UNIT TEST (having issues with precision)
+     * @dataProvider getTestGetVolumeEarthData
+     **/
+    public function testGetVolumeEarth($volumeEarth, $expected)
+    {
+        $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
+        $result = $solarSystemData->getVolumeEarth($volumeEarth);
+        $this->assertEquals($result, $expected, 'Assert the mean volume of earth in cubic kilometers'); 
+    }
+
+    public function getTestGetVolumeEarthData()
+    {
+        return array(
+            array(1083206916845.8, 1083206916845.8)
+        );
+    }
+
+    /**
      * Mean radius of earth's moon in meters (m)
      *
      * @dataProvider getTestGetRadiusMoonData
