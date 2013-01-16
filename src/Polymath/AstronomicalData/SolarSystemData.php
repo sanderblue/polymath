@@ -15,7 +15,7 @@ class SolarSystemData
     }
 
     /**
-     * Surface Temperature of the Sun in Kelvin(K)
+     * Surface Temperature of the Sun in Kelvin (K)
      * 
      * @dataProvider getSurfaceTempSunData
      **/
@@ -25,12 +25,22 @@ class SolarSystemData
     }
 
     /**
-     * Surface Temperature of Earth in Kelvin(K)
+     * Surface Temperature of Earth in Kelvin (K)
      * 
      * @dataProvider getSurfaceTempEarthData
      **/
     public function getSurfaceTempEarth($tempEarth)
     {
         return 290; 
+    }
+
+    /**
+     * Mean radius of earth in meters (m)
+     * 
+     * @dataProvider getMeanRadiusEarthData
+     **/
+    public function getMeanRadiusEarth($radiusEarth)
+    {
+        return 6.371 * pow(10, 6); 
     }
 }
