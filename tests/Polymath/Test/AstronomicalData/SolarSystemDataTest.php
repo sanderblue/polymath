@@ -15,7 +15,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     public function testGetMassSun($sun, $expected)
     {
         $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarSystemData->getMassSun($sun, $expected);
+        $result = $solarSystemData->getMassSun($sun);
         $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
     }
 
@@ -34,7 +34,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     public function testGetSurfaceTempSun($tempSun, $expected)
     {
         $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarSystemData->getSurfaceTempSun($tempSun, $expected);
+        $result = $solarSystemData->getSurfaceTempSun($tempSun);
         $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
     }
 
@@ -53,7 +53,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     public function testGetSurfaceTempEarth($tempEarth, $expected)
     {
         $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarSystemData->getSurfaceTempEarth($tempEarth, $expected);
+        $result = $solarSystemData->getSurfaceTempEarth($tempEarth);
         $this->assertEquals($result, $expected, 'Assert the mass of earth in kilograms'); 
     }
 
@@ -72,7 +72,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     public function testGetMeanRadiusEarth($radiusEarth, $expected)
     {
         $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarSystemData->getMeanRadiusEarth($radiusEarth, $expected);
+        $result = $solarSystemData->getMeanRadiusEarth($radiusEarth);
         $this->assertEquals($result, $expected, 'Assert the mean radius of earth in kilograms'); 
     }
 
@@ -82,5 +82,42 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
             array(6371000, 6371000)
         );
     }
-}
 
+    /**
+     * Mean radius of earth's moon in meters (m)
+     *
+     * @dataProvider getTestGetRadiusMoonData
+     **/
+    public function testGetRadiusMoon($radiusMoon, $expected)
+    {
+        $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
+        $result = $solarSystemData->getRadiusMoon($radiusMoon);
+        $this->assertEquals($result, $expected, 'Assert the mean radius of earth in kilograms'); 
+    }
+
+    public function getTestGetRadiusMoonData()
+    {
+        return array(
+            array(1741000, 1741000)
+        );
+    }
+
+    /**
+     * Mass of earth's moon in kilograms (kg)
+     *
+     * @dataProvider getTestGetMassMoonData
+     **/
+    public function testGetMassMoon($massMoon, $expected)
+    {
+        $solarSystemData = new \Polymath\AstronomicalData\SolarSystemData();
+        $result = $solarSystemData->getMassMoon($massMoon);
+        $this->assertEquals($result, $expected, 'Assert the mass of earths moon in kilograms'); 
+    }
+
+    public function getTestGetMassMoonData()
+    {
+        return array(
+            array(7.35E+22, 7.35E+22)
+        );
+    }
+}

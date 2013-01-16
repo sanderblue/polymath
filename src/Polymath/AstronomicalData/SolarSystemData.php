@@ -43,4 +43,24 @@ class SolarSystemData
     {
         return 6.371 * pow(10, 6); 
     }
+
+    /**
+     * Radius of earth's moon in meters (m)
+     * 
+     * @dataProvider getRadiusMoonData
+     **/
+    public function getRadiusMoon($radiusMoon)
+    {
+        return 1.741 * pow(10, 6); 
+    }
+
+    /**
+     * Mass of earth's moon in kilograms (kg)
+     * 
+     * @dataProvider getMassMoonData
+     **/
+    public function getMassMoon($massMoon)
+    {
+        return 7.35E+22; // trying scientific notation
+    }
 }
