@@ -7,7 +7,7 @@ class MachineEpsilon
     /**
     * Returns the machine epsilon value
     */
-    public function machineEpsilon() 
+    public function getMachineEpsilon() 
     {
       $eps = 1.0;
       while ($eps + 1.0 > 1.0) 

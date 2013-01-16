@@ -7,16 +7,16 @@ use PHPUnit_Framework_TestCase;
 class MachineEpsilonTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider getTestMachineEpsilonData
+     * @dataProvider getTestGetMachineEpsilonData
      **/
-    public function testMachineEpsilon($x, $expected)
+    public function testGetMachineEpsilon($x, $expected)
     {
         $computation = new \Polymath\Computation\MachineEpsilon();
-        $result = $computation->machineEpsilon($x);
+        $result = $computation->getMachineEpsilon($x);
         $this->assertEquals($result, $expected, 'Assert machine epsilon value'); 
     }
 
-    public function getTestMachineEpsilonData()
+    public function getTestGetMachineEpsilonData()
     {
         return array(
             array(2.2204460492503E-16, 2.2204460492503E-16)

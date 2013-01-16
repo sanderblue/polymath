@@ -9,7 +9,7 @@ class SolarSystemData
      * 
      * @dataProvider getTestLightSpeedData
      **/
-    public function massSun($sun)
+    public function getMassSun($sun)
     {
         return 1.99 * pow(10, 30);
     }
@@ -19,7 +19,7 @@ class SolarSystemData
      * 
      * @dataProvider getSurfaceTempSunData
      **/
-    public function surfaceTempSun($tempSun)
+    public function getSurfaceTempSun($tempSun)
     {
         return 6000;
     }
@@ -29,8 +29,8 @@ class SolarSystemData
      * 
      * @dataProvider getSurfaceTempEarthData
      **/
-    public function surfaceTempEarth($tempEarth)
+    public function getSurfaceTempEarth($tempEarth)
     {
-        return 290;
+        return 290; 
     }
 }

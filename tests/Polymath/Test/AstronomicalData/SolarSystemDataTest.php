@@ -10,16 +10,16 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     /**
      * Mass of the sun
      *
-     * @dataProvider getTestMassSunData
+     * @dataProvider getTestGetMassSunData
      **/
-    public function testMassSun($sun, $expected)
+    public function testGetMassSun($sun, $expected)
     {
         $solarsystemdata = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarsystemdata->massSun($sun, $expected);
+        $result = $solarsystemdata->getMassSun($sun, $expected);
         $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
     }
 
-    public function getTestMassSunData()
+    public function getTestGetMassSunData()
     {
         return array(
             array(1.99E+30, 1.99E+30)
@@ -29,16 +29,16 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     /**
      * Surface Temperature of the Sun in Kelvin (K)
      *
-     * @dataProvider getTestSurfaceTempSunData
+     * @dataProvider getTestGetSurfaceTempSunData
      **/
-    public function testSurfaceTempSun($tempSun, $expected)
+    public function testGetSurfaceTempSun($tempSun, $expected)
     {
         $solarsystemdata = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarsystemdata->surfaceTempSun($tempSun, $expected);
+        $result = $solarsystemdata->getSurfaceTempSun($tempSun, $expected);
         $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
     }
 
-    public function getTestSurfaceTempSunData()
+    public function getTestGetSurfaceTempSunData()
     {
         return array(
             array(6000, 6000)
@@ -47,16 +47,16 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     /**
      * Surface Temperature of Earth in Kelvin (K)
      *
-     * @dataProvider getTestSurfaceTempEarthData
+     * @dataProvider getTestGetSurfaceTempEarthData
      **/
-    public function testSurfaceTempEarth($tempEarth, $expected)
+    public function testGetSurfaceTempEarth($tempEarth, $expected)
     {
         $solarsystemdata = new \Polymath\AstronomicalData\SolarSystemData();
-        $result = $solarsystemdata->surfaceTempEarth($tempEarth, $expected);
+        $result = $solarsystemdata->getSurfaceTempEarth($tempEarth, $expected);
         $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
     }
 
-    public function getTestSurfaceTempEarthData()
+    public function getTestGetSurfaceTempEarthData()
     {
         return array(
             array(290, 290)
