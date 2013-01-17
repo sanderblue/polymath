@@ -4,7 +4,7 @@ namespace Polymath\Conversions\Energy;
 
 class Energy
 {
-	/**
+    /**
      * Kilowatt-hours (kWh) to Joules (J)
      **/
     public function kilowattHour2Joules($kWh)
