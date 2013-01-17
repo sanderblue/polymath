@@ -19,4 +19,12 @@ class Energy
     {
         return $j * 2.78 * pow(10, -7);
     }
+
+    /**
+     * British thermal unit (Btu)Joules (J)
+     **/
+    public function btu2Joules($btu)
+    {
+        return $btu * 1055;
+    }
 }

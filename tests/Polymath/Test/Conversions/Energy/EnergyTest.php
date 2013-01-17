@@ -45,4 +45,24 @@ class EnergyTest extends PHPUnit_Framework_TestCase
             array(3, 0.000000834)
         ); 
     }
+
+    /**
+     * British thermal unit (Btu)Joules (J)
+     *
+     * @dataProvider getTestBtu2JoulesData
+     **/
+    public function testBtu2Joules($btu, $expected)
+    {
+        $energy = new \Polymath\Conversions\Energy\Energy();
+        $result = $energy->btu2Joules($btu);
+        $this->assertEquals($result, $expected, 'Convert kilowatt hours (kWh) to Joules (J)'); 
+    }
+
+    public function getTestBtu2JoulesData()
+    {
+        return array(
+            array(1, 1055),
+            array(12, 12660)
+        ); 
+    }
 }
