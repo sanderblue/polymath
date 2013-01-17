@@ -11,4 +11,12 @@ class Energy
     {
         return $kWh * 3.6 * pow(10, 6);
     }
+
+    /**
+     * Joules (J) to Kilowatt-hours (kWh)
+     **/
+    public function joules2KilowattHour($j)
+    {
+        return $j * 2.78 * pow(10, -7);
+    }
 }
