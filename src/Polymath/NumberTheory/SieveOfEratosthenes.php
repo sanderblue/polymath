@@ -16,7 +16,7 @@ class SieveOfEratosthenes
      * is the first prime. Mark every multiple of this prime. Repeatedly take 
      * the next unmarked integer as the next prime and mark every multiple of the prime.
      *
-     * Ported from their old Java code (thanks NIST)
+     * Ported from publicly provided code by NIST (thanks scientists)
      * @see http://xlinux.nist.gov/dads/HTML/sieve.html
      */
     public function getPrimes($upTo) 
