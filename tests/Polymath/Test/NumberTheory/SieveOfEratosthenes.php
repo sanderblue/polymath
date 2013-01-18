@@ -18,3 +18,4 @@ class SieveOfEratosthenesTest extends PHPUnit_Framework_TestCase
         return $primes;
     }
 }
+

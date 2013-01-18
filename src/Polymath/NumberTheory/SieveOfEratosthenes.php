@@ -56,3 +56,4 @@ class SieveOfEratosthenes
       die("n must be greater than 0."); 
     }
 }
+

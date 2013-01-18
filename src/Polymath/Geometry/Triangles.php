@@ -28,3 +28,4 @@ class Triangles
         return hypot($a, $b); 
     }
 }
+

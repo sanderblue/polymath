@@ -85,4 +85,24 @@ class EnergyTest extends PHPUnit_Framework_TestCase
             array(2000, 1.8957345971564)
         ); 
     }
+
+    /**
+     * Kilowatt-hour (kWh) to British thermal unit (Btu)
+     *
+     * @dataProvider getTestKilowattHour2BtuData
+     **/
+    public function testKilowattHour2Btu($kWh, $expected)
+    {
+        $energy = new \Polymath\Conversions\Energy\Energy();
+        $result = $energy->kilowattHour2Btu($kWh);
+        $this->assertEquals($result, $expected, 'Convert kilowatt hours (kWh) to Joules (J)'); 
+    }
+
+    public function getTestKilowattHour2BtuData()
+    {
+        return array(
+            array(1, 3413),
+            array(125, 426625)
+        ); 
+    }
 }
