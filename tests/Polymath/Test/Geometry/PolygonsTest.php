@@ -84,4 +84,27 @@ class PolygonsTest extends PHPUnit_Framework_TestCase
             array(2, 3, 2, 5)
         ); 
     }
+
+    /**
+     * Compute the area of the specfied polygon on an XY Coordinate Plane
+     *
+     * @param array $x = x coordinates of a polygon
+     * @param array $y = y coordinates of a polygon
+     *
+     * @dataProvider getTestAreaPolygonData
+     **/
+    public function testAreaPolygon($x, $y, $expected)
+    {
+        $geometry = new \Polymath\Geometry\Polygons();
+        $result = $geometry->areaPolygon($x, $y);
+        $this->assertEquals($result, $expected, 'Given x and y coordinates, assert the area of a polygon'); 
+    }
+
+    public function getTestAreaPolygonData()
+    {
+        return array(
+            array($x = array(2,4,4,2), $y = array(2,2,4,4), 4),
+            array($x = array(1,6,6,1), $y = array(1,1,6,6), 25)
+        ); 
+    }
 }

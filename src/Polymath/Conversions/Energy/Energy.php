@@ -21,10 +21,18 @@ class Energy
     }
 
     /**
-     * British thermal unit (Btu)Joules (J)
+     * British thermal unit (Btu) to Joules (J)
      **/
     public function btu2Joules($btu)
     {
         return $btu * 1055;
+    }
+
+    /**
+     * Joules to British thermal unit (Btu)
+     **/
+    public function joules2Btu($j)
+    {
+        return $j / 1055;
     }
 }
