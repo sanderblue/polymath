@@ -2,16 +2,16 @@
 
 namespace Polymath\Geometry;
 
-use Polymath\Constants;
+use Polymath\MathConstants;
 
 class Circles
 {
     private $constants;
 
-    public function __construct(Constants $constants = null) 
+    public function __construct(MathConstants $constants = null) 
     {
         if ($constants === null) {
-            $constants = new Constants\Constants();
+            $constants = new MathConstants\Constants();
         }
         $this->constants = $constants;
     }
