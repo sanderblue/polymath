@@ -15,7 +15,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     public function testGetMassSun($sun, $expected)
     {
         $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
-        $result = $solarSystemData->getMassSun($sun);
+        $result = $solarSystemData->getMassSun();
         $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
     }
 
@@ -24,6 +24,15 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
         return array(
             array(1.99E+30, 1.99E+30)
         );
+    }
+
+    /**
+     * Volume of the sun
+     **/
+    public function testGetVolumeSun()
+    {
+        $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
+        $this->assertEquals(bcscale(1.414348326301E+18), $solarSystemData->getVolumeSun(), 'Assert the mass of the sun in kilograms'); 
     }
 
     /**
@@ -87,20 +96,11 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
      * Mean volume of earth in cubic kilometers (km^3)
      *
      * @author EDIT THIS TO PASS UNIT TEST (having issues with precision)
-     * @dataProvider getTestGetVolumeEarthData
      **/
-    public function testGetVolumeEarth($volumeEarth, $expected)
+    public function testGetVolumeEarth()
     {
         $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
-        $result = $solarSystemData->getVolumeEarth($volumeEarth);
-        $this->assertEquals($result, $expected, 'Assert the mean volume of earth in cubic kilometers'); 
-    }
-
-    public function getTestGetVolumeEarthData()
-    {
-        return array(
-            array(1083206916845.8, 1083206916845.8)
-        );
+        $this->assertEquals(1083206916845.8, $solarSystemData->getVolumeEarth(), 'Assert the mean volume of earth in cubic kilometers'); 
     }
 
     /**

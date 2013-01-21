@@ -7,6 +7,25 @@ use PHPUnit_Framework_TestCase;
 class ConstantsDataTest extends PHPUnit_Framework_TestCase
 {
     /**
+     * Atomic Mass Unit 
+     * 
+     * @dataProvider getTestGetAtomicMassUnitData
+     **/
+    public function testGetAtomicMassUnit($amu, $expected)
+    {
+        $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
+        $result = $constantsData->getAtomicMassUnit($amu);
+        $this->assertEquals($result, $expected, 'Assert the mass of a proton in kilograms (kg)'); 
+    }
+
+    public function getTestGetAtomicMassUnitData()
+    {
+        return array(
+            array(1.66E-27, 1.66E-27)
+        ); 
+    }
+
+    /**
      * Proton Mass
      * 
      * @dataProvider getTestGetProtonMassData
@@ -15,13 +34,70 @@ class ConstantsDataTest extends PHPUnit_Framework_TestCase
     {
         $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
         $result = $constantsData->getProtonMass($proton, $expected);
-        $this->assertEquals($result, $expected, 'Assert the speed of light c in meters per second'); 
+        $this->assertEquals($result, $expected, 'Assert the mass of a proton in kilograms (kg)'); 
     }
 
     public function getTestGetProtonMassData()
     {
         return array(
-            array(1.673E-27, 300000000)
+            array(1.673E-27, 1.673E-27)
+        ); 
+    }
+
+    /**
+     * Neutron Mass
+     * 
+     * @dataProvider getTestGetNeutronMassData
+     **/
+    public function testGetNeutronMass($neutron, $expected)
+    {
+        $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
+        $result = $constantsData->getNeutronMass($neutron, $expected);
+        $this->assertEquals($result, $expected, 'Assert the mass of a neutron in kilograms (kg)'); 
+    }
+
+    public function getTestGetNeutronMassData()
+    {
+        return array(
+            array(1.675E-27, 1.675E-27)
+        ); 
+    }
+
+    /**
+     * Electron Mass
+     * 
+     * @dataProvider getTestGetElectronMassData
+     **/
+    public function testGetElectronMass($electron, $expected)
+    {
+        $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
+        $result = $constantsData->getElectronMass($electron, $expected);
+        $this->assertEquals($result, $expected, 'Assert the mass of an electron in kilograms (kg)'); 
+    }
+
+    public function getTestGetElectronMassData()
+    {
+        return array(
+            array(9.109E-31, 9.109E-31)
+        ); 
+    }
+
+    /**
+     * Deuteron Mass
+     * 
+     * @dataProvider getTestGetDeuteronMassData
+     **/
+    public function testGetDeuteronMass($deuteron, $expected)
+    {
+        $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
+        $result = $constantsData->getDeuteronMass($deuteron, $expected);
+        $this->assertEquals($result, $expected, 'Assert the mass of an deuteron in kilograms (kg)'); 
+    }
+
+    public function getTestGetDeuteronMassData()
+    {
+        return array(
+            array(3.34E-27, 3.34E-27)
         ); 
     }
 }
