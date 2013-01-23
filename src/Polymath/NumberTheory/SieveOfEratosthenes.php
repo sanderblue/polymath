@@ -9,7 +9,7 @@ class SieveOfEratosthenes
      *
      * This class uses the sieve of Eratosthenes to find prime numbers
      *
-     * The National Institute of Standards and Technology (NIST) defines the Sieve of Eratosthenes as follows:
+     * The National Institute of Standards and Technology (NIST) defines the sieve of Eratosthenes as follows:
      *
      * Definition: An algorithm to find all prime numbers up to a certain N. 
      * Begin with an (unmarked) array of integers from 2 to N. The first unmarked integer, 2, 

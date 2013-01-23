@@ -21,7 +21,7 @@ class SolorSystemCommunicatorTest extends PHPUnit_Framework_TestCase
     public function getTestGetEarthsInSunData()
     {
         return array(
-            array(bcscale(1305704.6666758)) 
+            array(1305704.6666758) // Volumes of earth that can fit into the sun's volume
         );
     }
 }

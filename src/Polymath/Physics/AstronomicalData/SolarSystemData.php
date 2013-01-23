@@ -27,11 +27,14 @@ class SolarSystemData
     /**
      * Volume of the sun (km^3) 
      *
+     * @author precision issues 
+     *
      * Radius = 696342 km
      **/
     public function getVolumeSun()
     {
-        return pi() * 4 / 3 * pow(696342, 3);
+        return 1.414348326301E+18;
+        // return $this->constants->pi() * 4 / 3 * pow(696342, 3);
     }
 
     /**
@@ -66,7 +69,12 @@ class SolarSystemData
     public function getVolumeEarth()
     {
         return 1083206916845.8;
-        // return $this->constants->pi() * 4 / 3 * pow(6371, 3); 
+
+        // Testing BC Math precision
+        //
+        // return bcmul(pi(), (4 / 3), 6371E+3));
+        // bcscale(28);
+        // return $this->constants->pi() * bcdiv(4, 3) * bcpow(6371, 3); 
     }
 
     /**

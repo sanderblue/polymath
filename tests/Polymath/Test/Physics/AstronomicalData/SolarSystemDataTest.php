@@ -32,7 +32,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     public function testGetVolumeSun()
     {
         $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
-        $this->assertEquals(bcscale(1.414348326301E+18), $solarSystemData->getVolumeSun(), 'Assert the mass of the sun in kilograms'); 
+        $this->assertEquals(1.414348326301E+18, $solarSystemData->getVolumeSun(), 'Assert the volume of the sun in cubic kilometers'); 
     }
 
     /**
@@ -44,7 +44,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     {
         $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
         $result = $solarSystemData->getSurfaceTempSun($tempSun);
-        $this->assertEquals($result, $expected, 'Assert the mass of the sun in kilograms'); 
+        $this->assertEquals($result, $expected, 'Assert the surface temperature of the sun in Kelvin (K)'); 
     }
 
     public function getTestGetSurfaceTempSunData()
@@ -63,7 +63,7 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
     {
         $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
         $result = $solarSystemData->getSurfaceTempEarth($tempEarth);
-        $this->assertEquals($result, $expected, 'Assert the mass of earth in kilograms'); 
+        $this->assertEquals($result, $expected, 'Assert the surface temperature of earth in Kelvin'); 
     }
 
     public function getTestGetSurfaceTempEarthData()
@@ -96,11 +96,21 @@ class SolorSystemDataTest extends PHPUnit_Framework_TestCase
      * Mean volume of earth in cubic kilometers (km^3)
      *
      * @author EDIT THIS TO PASS UNIT TEST (having issues with precision)
+     *
+     * @dataProvider getTestGetVolumeEarthData
      **/
-    public function testGetVolumeEarth()
+    public function testGetVolumeEarth($expected)
     {
         $solarSystemData = new \Polymath\Physics\AstronomicalData\SolarSystemData();
-        $this->assertEquals(1083206916845.8, $solarSystemData->getVolumeEarth(), 'Assert the mean volume of earth in cubic kilometers'); 
+        $result = $solarSystemData->getVolumeEarth();
+        $this->assertEquals($result, $expected, 'Assert the mean volume of earth in cubic kilometers');
+    }
+
+    public function getTestGetVolumeEarthData()
+    {
+        return array(
+            array(1083206916845.8, 1083206916845.8)
+        );
     }
 
     /**
