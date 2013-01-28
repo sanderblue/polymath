@@ -23,7 +23,7 @@ class MonteCarloPi
         while ($i <= $integer) {
             $x = rand(0, 30);
             $y = rand(0, 30);
-            $distance = sqrt(pow($x, 2)+ pow($y, 2));
+            $distance = sqrt(pow($x, 2) + pow($y, 2));
 
             if ($distance <= 1.0) {
             $circle = $circle + 1;
