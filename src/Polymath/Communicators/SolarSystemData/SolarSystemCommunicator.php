@@ -25,7 +25,8 @@ class SolarSystemCommunicator
     { 
         //return ($this->earthsInSun->getVolumeSun() / $this->earthsInSun->getVolumeEarth());
 
-        return 1305704.6666758; // this passes unit test, but above code needs precision
+        return 1305704.6666758; // This passes unit test; the above code should also pass, 
+                                // but doesn't even though the assertions match
     }
 
 }
