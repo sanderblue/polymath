@@ -4,7 +4,7 @@ namespace Polymath\Conversions\Distance;
 
 class Distance
 {
-    public function mi2km($mi)
+    public function mi2km($mi = null)
     {
         return $mi * 1.609344;
     }

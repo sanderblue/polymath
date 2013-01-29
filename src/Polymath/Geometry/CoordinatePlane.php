@@ -2,6 +2,8 @@
 
 namespace Polymath\Geometry;
 
+use Polymath\Conversions\Distance;
+
 class CoordinatePlane
 {
     /**
@@ -18,21 +20,23 @@ class CoordinatePlane
     }
 
     /**
-     * Distance between two latitute and longitute points
+     * Distance between two latitute and longitute points in miles
+     * Uses Decimal Degrees for calculation
+     * Single Coordinate Example: 32.30642° N 122.61458° W = +32.30642, -122.61458 
      *
-     * @param $lat1
+     * @param $lat1 
      * @param $lon1
      * @param $lat2
      * @param $lon2
      * @return $d
      */
-    function distanceLatLon($lat1, $lon1, $lat2, $lon2) 
+    public function distanceLatLon($lat1, $lon1, $lat2, $lon2) 
     {   
         $theta = $lon1 - $lon2;   
-        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));   
+        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));   
         $dist = acos($dist);   
         $dist = rad2deg($dist);   
-        $miles = $dist * 60 * 1.1515;  
+        $miles = $dist * 60 * 1.1515; 
             return $miles;  
     } 
 }

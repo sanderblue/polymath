@@ -13,16 +13,18 @@ class MonteCarloPi extends PHPUnit_Framework_TestCase
      *
      * @dataProvider getTestGetMonteCarloPiData
      **/
-    public function testGetMonteCarloPi()
+    public function testGetMonteCarloPi($integer, $expected)
     {
         $monteCarlo = new \Polymath\NumberTheory\MonteCarloSimulations\MonteCarloPi();
-        $result = $monteCarlo->getMonteCarloPi();
+        $result = $monteCarlo->getMonteCarloPi($integer);
         $this->assertEquals($result, $expected, 'Assert the average value of Pi after n iterations'); 
     }
 
     public function getTestGetMonteCarloPiData()
     {
         // NOTE: Returned values are random and vary due to Monte Carlo predicition theory
-        return testGetMonteCarloPi;
+        return array(
+            array(999999, is_float(3.14))    
+        );
     }
 }

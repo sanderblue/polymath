@@ -21,6 +21,6 @@ class EquilibriumIndex extends PHPUnit_Framework_TestCase
 
     public function getTestGetEquilibriumsData()
     {
-        return testGetEquilibriums; // returns Array ( [0] => 3 [1] => 6 )
+        return getTestGetEquilibriumsData; // returns Array ( [0] => 3 [1] => 6 )
     }
 }
