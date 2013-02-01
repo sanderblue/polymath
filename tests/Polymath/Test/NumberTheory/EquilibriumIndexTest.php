@@ -16,13 +16,13 @@ class EquilibriumIndex extends PHPUnit_Framework_TestCase
         $ofThisArray = array(-7, 1, 5, 2, -4, 3, 0);
         $equilbriums = new \Polymath\NumberTheory\EquilibriumIndex();
         $result = $equilbriums->getEquilibriums($ofThisArray);
-        $this->assertEquals(is_array($result), is_array($expected), 'Assert the equilibrium indexes of the given array'); 
+        $this->assertSame(array($result), array($expected), 'Assert the equilibrium indexes of the given array'); 
     }
 
     public function getTestGetEquilibriumsData()
     {
         return array(
-            array($ofThisArray = array(3, 6), $expected = array(3, 6))
+            array(array(3, 6), array(3, 6))
         ); 
     }
 }

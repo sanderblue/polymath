@@ -7,22 +7,22 @@ use PHPUnit_Framework_TestCase;
 class SieveOfEratosthenesTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @author Still needs proper unit test, but this works for now
+     * @param returns an array of prime numbers up to a given number $upTo
      *
      * @dataProvider getTestSieveOfEratosthenesData
      **/
     public function testSieveOfEratosthenes($upTo, $expected)
     {
         $sieve  = new \Polymath\NumberTheory\SieveOfEratosthenes();
-        $result = $sieve->getPrimes($upTo); // Will return all prime numbers up to 420
-        $this->assertContains($result, array($expected), 'Return the primes up to a provided number'); 
+        $result = $sieve->getPrimes($upTo);
+        $this->assertContains($result, array($expected), 'Return all prime numbers up to a given number'); 
     }
 
     public function getTestSieveOfEratosthenesData()
     {
         return array(
-            array(7, $expected = array(2, 3, 5, 7)),
-            array(15, $expected = array(2, 3, 5, 7, 11, 13))
+            array(7, array(2, 3, 5, 7)),
+            array(15, array(2, 3, 5, 7, 11, 13))
         ); 
     }
 }
