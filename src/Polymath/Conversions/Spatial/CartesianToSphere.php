@@ -15,7 +15,7 @@ class CartesianToSphere
      * @param $x real x coordinate
      * @param $y real y coordinate
      * @param $z real z coordinate
-     *
+     * 
      * @return array containing $rho, $phi, $theta 
      **/ 
     function cartesianToSphere($x, $y, $z) { 

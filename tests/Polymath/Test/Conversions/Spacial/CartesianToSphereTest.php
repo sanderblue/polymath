@@ -10,7 +10,7 @@ class CartesianToSphere extends PHPUnit_Framework_TestCase
      * @param $x real x coordinate
      * @param $y real y coordinate
      * @param $z real z coordinate
-     * @return array containing $rho, $phi, $theta 
+     * @return array containing $rho, $phi, $theta (in radians)
      *
      * @dataProvider getTestCartesianToSphereData
      **/
@@ -18,7 +18,7 @@ class CartesianToSphere extends PHPUnit_Framework_TestCase
     {
         $space = new \Polymath\Conversions\Spatial\CartesianToSphere();
         $result = $space->cartesianToSphere($x, $y, $z);
-        $this->assertEquals($result, $expected, 'Convert kilowatt hours (kWh) to Joules (J)'); 
+        $this->assertEquals($result, $expected, 'Given the xyz coordinate, assert the values for rho (distance), phi (angle), and theta (angle)'); 
     }
 
     public function getTestCartesianToSphereData()
