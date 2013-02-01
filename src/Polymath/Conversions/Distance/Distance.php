@@ -13,4 +13,24 @@ class Distance
     {
         return $km * 0.621371;
     }
+
+    public function meters2feet($m)
+    {
+        return $m * 3.28;
+    }
+
+    public function feet2meters($ft)
+    {
+        return $ft / 3.28;
+    }
+
+    public function meters2yards($m)
+    {
+        return $m * 1.09361;
+    }
+
+    public function yards2meters($yd)
+    {
+        return $yd * 0.9144;
+    }
 }

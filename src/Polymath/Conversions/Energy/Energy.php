@@ -43,4 +43,14 @@ class Energy
     {
         return $kWh * 3413;
     }
+
+    /**
+     * Calorie (cal) to Joules (J)
+     **/
+    public function cal2Joules($cal)
+    {
+        return $cal * 4.184;
+    }
+
+
 }
