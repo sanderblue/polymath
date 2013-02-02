@@ -37,4 +37,30 @@ class Trigonometry
     {
         return tan($x);
     }
+
+    // return sine of an angle in degrees, and so on... see below.
+    public function sind($degrees) 
+    {
+        return sin(deg2rad($degrees));
+    }
+
+    public function cosd($degrees) {
+        return cos(deg2rad($degrees));
+    }
+    
+    public function tand($degrees) {
+        return tan(deg2rad($degrees));
+    }
+    
+    public function atand($x) {
+        return rad2deg(atan($x));
+    }
+    
+    public function asind($x) {
+        return rad2deg(asin($x));
+    }
+    
+    public function acosd($x) {
+        return rad2deg(acos($x));
+    }
 }
