@@ -91,13 +91,32 @@ class ConstantsDataTest extends PHPUnit_Framework_TestCase
     {
         $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
         $result = $constantsData->getDeuteronMass($deuteron, $expected);
-        $this->assertEquals($result, $expected, 'Assert the mass of an deuteron in kilograms (kg)'); 
+        $this->assertEquals($result, $expected, 'Assert the mass of a deuteron in kilograms (kg)'); 
     }
 
     public function getTestGetDeuteronMassData()
     {
         return array(
             array(3.34E-27, 3.34E-27)
+        ); 
+    }
+
+    /**
+     * Alpha Particle Mass
+     * 
+     * @dataProvider getTestGetAlphaParticleMassData
+     **/
+    public function testGetAlphaParticleMass($alpha, $expected)
+    {
+        $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
+        $result = $constantsData->getAlphaParticleMass($alpha, $expected);
+        $this->assertEquals($result, $expected, 'Assert the mass of an alpha particle in kilograms (kg)'); 
+    }
+
+    public function getTestGetAlphaParticleMassData()
+    {
+        return array(
+            array(6.64E-27, 6.64E-27)
         ); 
     }
 }

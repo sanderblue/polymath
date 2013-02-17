@@ -28,4 +28,9 @@ class ConstantsData
     {
         return 3.34 * pow(10, -27); // kilograms (kg)
     }
+
+    public function getAlphaParticleMass()
+    {
+        return 6.64 * pow(10, -27); // kilograms (kg)
+    }
 }
