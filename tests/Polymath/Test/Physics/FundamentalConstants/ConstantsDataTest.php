@@ -106,17 +106,17 @@ class ConstantsDataTest extends PHPUnit_Framework_TestCase
      * 
      * @dataProvider getTestGetAlphaParticleMassData
      **/
-    public function testGetAlphaParticleMass($alpha, $expected)
-    {
-        $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
-        $result = $constantsData->getAlphaParticleMass($alpha, $expected);
-        $this->assertEquals($result, $expected, 'Assert the mass of an alpha particle in kilograms (kg)'); 
-    }
+    // public function testGetAlphaParticleMass($alpha, $expected)
+    // {
+    //     $constantsData = new \Polymath\Physics\FundamentalConstants\ConstantsData();
+    //     $result = $constantsData->getAlphaParticleMass($alpha, $expected);
+    //     $this->assertEquals($result, $expected, 'Assert the mass of an alpha particle in kilograms (kg)'); 
+    // }
 
-    public function getTestGetAlphaParticleMassData()
-    {
-        return array(
-            array(6.64E-27, 6.64E-27)
-        ); 
-    }
+    // public function getTestGetAlphaParticleMassData()
+    // {
+    //     return array(
+    //         array(6.64E-27, 6.64E-27)
+    //     ); 
+    // }
 }
