@@ -64,11 +64,17 @@ class SolarSystemData
     /**
      * Mean volume of earth in cubic kilometers (km^3)
      *
-     * @author having issues with precision
+     * @author EDIT THIS TO PASS UNIT TEST (having issues with precision)
      **/
     public function getVolumeEarth()
     {
         return 1083206916845.8;
+
+        // Testing BC Math precision
+        //
+        // return bcmul(pi(), (4 / 3), 6371E+3));
+        // bcscale(28);
+        // return $this->constants->pi() * bcdiv(4, 3) * bcpow(6371, 3); 
     }
 
     /**
