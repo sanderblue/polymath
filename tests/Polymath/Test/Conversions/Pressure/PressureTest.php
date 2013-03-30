@@ -43,4 +43,22 @@ class Volume extends PHPUnit_Framework_TestCase
             array(7, 7092.75)
         ); 
     }
+
+    /**
+     * @dataProvider getTestMillibars2TorrData
+     **/
+    public function testMillibars2Torr($torr, $expected)
+    {
+        $pressure = new \Polymath\Conversions\Pressure\Pressure();
+        $result = $pressure->millibars2torr($torr);
+        $this->assertEquals($result, $expected, 'Convert millibars to torr.'); 
+    }
+
+    public function getTestMillibars2TorrData()
+    {
+        return array(
+            array(1, 0.7500616827042),
+            array(1013, 759.81248457935),
+        ); 
+    }
 }

@@ -7,16 +7,24 @@ class Pressure
     /**
      * Atmosphere (atm) to bars (b) 
      **/
-    public function atm2bars($bars)
+    public function atm2bars($atm)
     {
-        return $bars * 1.01325;
+        return $atm * 1.01325;
     }
 
     /**
-     * Atmosphere (atm) to millibars (mb)
+     * Atmosphere (atm) to millibars
      **/
-    public function atm2millibars($millibars)
+    public function atm2millibars($atm)
     {
-        return $millibars * 1013.25;
+        return $atm * 1013.25;
+    }
+
+    /**
+     * Millibars to torr (Torr)
+     **/
+    public function millibars2torr($torr)
+    {
+        return $torr * 0.7500616827042;
     }
 }
