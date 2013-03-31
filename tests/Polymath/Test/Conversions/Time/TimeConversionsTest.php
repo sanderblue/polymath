@@ -25,4 +25,23 @@ class TimeConverions extends PHPUnit_Framework_TestCase
             array(22, 694251800.0)
         ); 
     }
+
+    /**
+     * @dataProvider getTestYears2MinutesData
+     **/
+    public function testYears2Minutes($years, $expected)
+    {
+        $timeConverions = new \Polymath\Conversions\Time\TimeConversions();
+        $result = $timeConverions->years2Minutes($years);
+        $this->assertEquals($result, $expected, 'Convert years to minutes'); 
+    }
+
+    public function getTestYears2MinutesData()
+    {
+        return array(
+            array(1, 525600.0),
+            array(3, 1576800.0),
+            array(7, 3679200.0)
+        ); 
+    }
 }
