@@ -76,7 +76,44 @@ class Volume extends PHPUnit_Framework_TestCase
     {
         return array(
             array(1, 1.33322368),
-            array(1013, 1350.55558784),
+            array(1013, 1350.55558784)
+        );
+    }
+
+    /**
+     * @dataProvider getTestPsf2PsiData
+     **/
+    public function testPsf2Psi($psi, $expected)
+    {
+        $pressure = new \Polymath\Conversions\Pressure\Pressure();
+        $result = $pressure->psf2psi($psi);
+        $this->assertEquals($result, $expected, 'Convert pounds per square foot (psf) to pounds per square inch (psi).');
+    }
+
+    public function getTestPsf2PsiData()
+    {
+        return array(
+            array(1, 0.006944444444444),
+            array(100, 0.6944444444444)
+        );
+    }
+
+    /**
+     * @dataProvider getTestPsi2PsfData
+     **/
+    public function testPsi2Psf($psf, $expected)
+    {
+        $pressure = new \Polymath\Conversions\Pressure\Pressure();
+        $result = $pressure->psi2psf($psf);
+        $this->assertEquals($result, $expected, 'Convert pounds per square foot (psf) to pounds per square inch (psi).');
+    }
+
+    public function getTestPsi2PsfData()
+    {
+        return array(
+            array(1, 144),
+            array(45, 6480),
+            array(100, 14400)
         );
     }
 }
