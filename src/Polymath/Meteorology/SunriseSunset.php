@@ -15,7 +15,7 @@ function sind($degrees) {
     return sin(deg2rad($degrees));
 }
 
-//etc
+//etc, etc
 function cosd($degrees) {
     return cos(deg2rad($degrees));
 }
