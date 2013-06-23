@@ -5,7 +5,7 @@ namespace Polymath\Conversions\Pressure;
 class Pressure
 {
     /**
-     * Atmosphere (atm) to bars (b) 
+     * Atmosphere (atm) to bars (b)
      **/
     public function atm2bars($atm)
     {
@@ -26,5 +26,13 @@ class Pressure
     public function millibars2torr($torr)
     {
         return $torr * 0.7500616827042;
+    }
+
+    /**
+     * Torr (Torr) to millibars
+     **/
+    public function torr2millibars($millibars)
+    {
+        return $millibars * 1.33322368;
     }
 }

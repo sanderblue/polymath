@@ -13,7 +13,7 @@ class Volume extends PHPUnit_Framework_TestCase
     {
         $pressure = new \Polymath\Conversions\Pressure\Pressure();
         $result = $pressure->atm2bars($bars);
-        $this->assertEquals($result, $expected, 'Convert atmospheric pressure to bars.'); 
+        $this->assertEquals($result, $expected, 'Convert atmospheric pressure to bars.');
     }
 
     public function getTestAtm2BarsData()
@@ -22,7 +22,7 @@ class Volume extends PHPUnit_Framework_TestCase
             array(1, 1.01325),
             array(3, 3.03975),
             array(7, 7.09275)
-        ); 
+        );
     }
 
     /**
@@ -32,7 +32,7 @@ class Volume extends PHPUnit_Framework_TestCase
     {
         $pressure = new \Polymath\Conversions\Pressure\Pressure();
         $result = $pressure->atm2millibars($millibars);
-        $this->assertEquals($result, $expected, 'Convert atmospheric pressure to millibars.'); 
+        $this->assertEquals($result, $expected, 'Convert atmospheric pressure to millibars.');
     }
 
     public function getTestAtm2MillibarsData()
@@ -41,7 +41,7 @@ class Volume extends PHPUnit_Framework_TestCase
             array(1, 1013.25),
             array(3, 3039.75),
             array(7, 7092.75)
-        ); 
+        );
     }
 
     /**
@@ -51,7 +51,7 @@ class Volume extends PHPUnit_Framework_TestCase
     {
         $pressure = new \Polymath\Conversions\Pressure\Pressure();
         $result = $pressure->millibars2torr($torr);
-        $this->assertEquals($result, $expected, 'Convert millibars to torr.'); 
+        $this->assertEquals($result, $expected, 'Convert millibars to torr.');
     }
 
     public function getTestMillibars2TorrData()
@@ -59,6 +59,24 @@ class Volume extends PHPUnit_Framework_TestCase
         return array(
             array(1, 0.7500616827042),
             array(1013, 759.81248457935),
-        ); 
+        );
+    }
+
+    /**
+     * @dataProvider getTestTorr2MillibarsData
+     **/
+    public function testTorr2Millibars($millibars, $expected)
+    {
+        $pressure = new \Polymath\Conversions\Pressure\Pressure();
+        $result = $pressure->torr2millibars($millibars);
+        $this->assertEquals($result, $expected, 'Convert torr to millibars.');
+    }
+
+    public function getTestTorr2MillibarsData()
+    {
+        return array(
+            array(1, 1.33322368),
+            array(1013, 1350.55558784),
+        );
     }
 }
