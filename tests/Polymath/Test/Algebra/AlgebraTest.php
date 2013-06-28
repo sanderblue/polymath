@@ -8,7 +8,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * Natural logarithm  base constant e
+     * Natural logarithm base constant e
      *
      * @dataProvider getTestEData
      **/
@@ -16,14 +16,14 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->exp($e); // natural logarithm
-        $this->assertEquals($result, $expected, 'Assert the base for natural logarithms e'); 
+        $this->assertEquals($result, $expected, 'Assert the base for natural logarithms e');
     }
 
     public function getTestEData()
     {
         return array(
             array(1, 2.71828182846)
-        ); 
+        );
     }
 
     /**
@@ -33,7 +33,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->square($x);
-        $this->assertEquals($result, $expected, 'Assert the square of x'); 
+        $this->assertEquals($result, $expected, 'Assert the square of x');
     }
 
     public function getTestSquareData()
@@ -42,7 +42,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 1),
             array(4, 16),
             array(9, 81)
-        ); 
+        );
     }
 
     /**
@@ -52,7 +52,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->cubed($x);
-        $this->assertEquals($result, $expected, 'Assert x cubed'); 
+        $this->assertEquals($result, $expected, 'Assert x cubed');
     }
 
     public function getTestCubedData()
@@ -61,7 +61,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 1),
             array(2, 8),
             array(3, 27)
-        ); 
+        );
     }
 
     /**
@@ -71,7 +71,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->sqrt($x);
-        $this->assertEquals($result, $expected, 'Assert the square root of x'); 
+        $this->assertEquals($result, $expected, 'Assert the square root of x');
     }
 
     public function getTestSqrtData()
@@ -80,7 +80,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 1),
             array(4, 2),
             array(9, 3)
-        ); 
+        );
     }
 
     /**
@@ -90,7 +90,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->abs($x);
-        $this->assertEquals($result, $expected, 'Assert the absolute value of x'); 
+        $this->assertEquals($result, $expected, 'Assert the absolute value of x');
     }
 
     public function getTestAbsData()
@@ -100,7 +100,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(2, 2),
             array(-3, 3),
             array(-5, 5)
-        ); 
+        );
     }
 
     /**
@@ -110,7 +110,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->sin($x);
-        $this->assertEquals($result, $expected, 'Assert the sine of x in radians'); 
+        $this->assertEquals($result, $expected, 'Assert the sine of x in radians');
     }
 
     public function getTestSinData()
@@ -120,7 +120,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 0.8414709848),
             array(2, 0.90929742682),
             array(3, 0.14112000806)
-        ); 
+        );
     }
 
     /**
@@ -130,7 +130,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->cos($x);
-        $this->assertEquals($result, $expected, 'Assert the cosine of x in radians'); 
+        $this->assertEquals($result, $expected, 'Assert the cosine of x in radians');
     }
 
     public function getTestCosData()
@@ -140,7 +140,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 0.54030230586),
             array(2, -0.41614683654),
             array(3, -0.9899924966)
-        ); 
+        );
     }
 
     /**
@@ -150,7 +150,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->tan($x);
-        $this->assertEquals($result, $expected, 'Assert the tangent of x in radians'); 
+        $this->assertEquals($result, $expected, 'Assert the tangent of x in radians');
     }
 
     public function getTestTanData()
@@ -160,7 +160,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 1.55740772465),
             array(2, -2.18503986326),
             array(3, -0.14254654307)
-        ); 
+        );
     }
 
     /**
@@ -170,7 +170,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
     {
         $algebra = new \Polymath\Algebra\Algebra();
         $result = $algebra->log($x); // natural logarithm
-        $this->assertEquals($result, $expected, 'Assert the natural log of x'); 
+        $this->assertEquals($result, $expected, 'Assert the natural log of x');
     }
 
     public function getTestLnData()
@@ -179,7 +179,7 @@ class AlgebraTest extends PHPUnit_Framework_TestCase
             array(1, 0),
             array(2, 0.69314718055995),
             array(3, 1.0986122886681)
-        ); 
+        );
     }
 }
 
