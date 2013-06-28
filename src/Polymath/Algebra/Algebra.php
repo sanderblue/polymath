@@ -4,13 +4,11 @@ namespace Polymath\Algebra;
 
 class Algebra
 {
-    // Algebra Constants
     public function exp($e)
     {
         return exp($e);
     }
 
-    // Algebra functions
     public function square($x)
     {
         return pow($x, 2);
