@@ -11,4 +11,12 @@ class Speed
     {
         return $mph * 767.2691481747;
     }
+
+    /**
+     * Speed of light (at standard atmospheric pressure) in meters/second (m/s)
+     **/
+    public function speedOfLight2MetersPerSecond($metersPerSecond)
+    {
+        return $metersPerSecond * 299792458; // 299,792,458
+    }
 }
