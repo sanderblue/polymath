@@ -15,7 +15,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
     {
         $distance = new \Polymath\Conversions\Distance\Distance();
         $result = $distance->mi2km($mi);
-        $this->assertEquals($result, $expected, 'Convert miles to kilometers'); 
+        $this->assertEquals($result, $expected, 'Convert miles to kilometers');
     }
 
     public function getTestMi2KmData()
@@ -24,7 +24,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
             array(1, 1.609344),
             array(2, 3.218688),
             array(634, 1020.324096)
-        ); 
+        );
     }
 
     /**
@@ -36,7 +36,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
     {
         $distance = new \Polymath\Conversions\Distance\Distance();
         $result = $distance->km2mi($km);
-        $this->assertEquals($result, $expected, 'Convert kilometers to miles'); 
+        $this->assertEquals($result, $expected, 'Convert kilometers to miles');
     }
 
     public function getTestKm2MiData()
@@ -45,7 +45,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
             array(1, 0.621371),
             array(2, 1.242742),
             array(75, 46.602825)
-        ); 
+        );
     }
 
     /**
@@ -57,7 +57,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
     {
         $distance = new \Polymath\Conversions\Distance\Distance();
         $result = $distance->meters2feet($m);
-        $this->assertEquals($result, $expected, 'Convert meters to feet'); 
+        $this->assertEquals($result, $expected, 'Convert meters to feet');
     }
 
     public function getTestMeters2FeetData()
@@ -67,7 +67,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
             array(3, 9.84),
             array(6, 19.68),
             array(17, 55.76)
-        ); 
+        );
     }
 
     /**
@@ -79,7 +79,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
     {
         $distance = new \Polymath\Conversions\Distance\Distance();
         $result = $distance->feet2Meters($ft);
-        $this->assertEquals($result, $expected, 'Convert feet to meters'); 
+        $this->assertEquals($result, $expected, 'Convert feet to meters');
     }
 
     public function getTestFeet2MetersData()
@@ -89,7 +89,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
             array(9, 2.7439024390244),
             array(12, 3.6585365853659),
             array(21, 6.4024390243902)
-        ); 
+        );
     }
 
     /**
@@ -101,7 +101,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
     {
         $distance = new \Polymath\Conversions\Distance\Distance();
         $result = $distance->meters2Yards($m);
-        $this->assertEquals($result, $expected, 'Convert meters (m) to yards (yd)'); 
+        $this->assertEquals($result, $expected, 'Convert meters (m) to yards (yd)');
     }
 
     public function getTestMeters2YardsData()
@@ -109,7 +109,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
         return array(
             array(1, 1.09361),
             array(9, 9.84249)
-        ); 
+        );
     }
 
     /**
@@ -121,7 +121,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
     {
         $distance = new \Polymath\Conversions\Distance\Distance();
         $result = $distance->yards2meters($yd);
-        $this->assertEquals($result, $expected, 'Convert yards (yd) to meters (m)'); 
+        $this->assertEquals($result, $expected, 'Convert yards (yd) to meters (m)');
     }
 
     public function getTestYards2MetersData()
@@ -129,6 +129,27 @@ class DistanceTest extends PHPUnit_Framework_TestCase
         return array(
             array(3, 2.7432),
             array(99, 90.5256)
-        ); 
+        );
+    }
+
+    /**
+     * Light Years (ly) to Miles (mi)
+     *
+     * @dataProvider getTestLightYear2MilesData
+     **/
+    public function testLightYear2Miles($ly, $expected)
+    {
+        $distance = new \Polymath\Conversions\Distance\Distance();
+        $result = $distance->lightyear2Miles($ly);
+        $this->assertEquals($result, $expected, 'Convert yards (yd) to meters (m)');
+    }
+
+    public function getTestLightYear2MilesData()
+    {
+        return array(
+            array(1, 5878499810000.0),
+            array(7, 41149498670000.0),
+            array(13.7, 80535447397000.0) // 13.7 billion years old: The approximated age of our universe.
+        );
     }
 }

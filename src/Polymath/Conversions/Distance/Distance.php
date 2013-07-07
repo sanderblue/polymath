@@ -33,4 +33,9 @@ class Distance
     {
         return $yd * 0.9144;
     }
+
+    public function lightyear2miles($ly)
+    {
+        return $ly * 5.87849981 * bcpow(10, 12);
+    }
 }
