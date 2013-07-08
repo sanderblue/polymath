@@ -8,7 +8,7 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Speed of Light
-     * 
+     *
      * @param $c = speed of light in m/sec
      * @return $c
      * @dataProvider getTestGetLightSpeedData
@@ -17,20 +17,20 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
     {
         $fundamentalConstants = new \Polymath\Physics\FundamentalConstants\FundamentalConstants();
         $result = $fundamentalConstants->getLightSpeed($c, $expected);
-        $this->assertEquals($result, $expected, 'Assert the speed of light c in meters per second'); 
+        $this->assertEquals($result, $expected, 'Assert the speed of light c in meters per second');
     }
 
     public function getTestGetLightSpeedData()
     {
         return array(
-            array(300000000, 300000000)
-        ); 
+            array(299792458.0, 299792458.0)
+        );
     }
 
     /**
      * Planck's Constant
-     * 
-     * @param $h = Planck's Constant
+     *
+     * @param $h = Planck's Constant (J/s)
      * @return $h
      * @dataProvider getTestGetPlancksConstantData
      **/
@@ -38,14 +38,14 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
     {
         $fundamentalConstants = new \Polymath\Physics\FundamentalConstants\FundamentalConstants();
         $result = $fundamentalConstants->getPlancksConstant($h, $expected);
-        $this->assertEquals($result, $expected, 'Assert Plancks Constant h in joules per second'); 
+        $this->assertEquals($result, $expected, 'Assert Plancks Constant h in joules per second');
     }
 
     public function getTestGetPlancksConstantData($h)
     {
         return array(
-            array(-0.000000000000000000000000000000000663, -0.000000000000000000000000000000000663)
-        ); 
+            array(6.62606957 * bcpow(10, -34), -0.000000000000000000000000000000000662606957)
+        );
     }
 
     /**
@@ -57,14 +57,14 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
     {
         $fundamentalConstants = new \Polymath\Physics\FundamentalConstants\FundamentalConstants();
         $result = $fundamentalConstants->getAvogadro($n);
-        $this->assertEquals($result, $expected, 'Assert Avogadros Number'); 
+        $this->assertEquals($result, $expected, 'Assert Avogadros Number');
     }
 
     public function getTestGetAvogadroData($n)
     {
         return array(
             array(6.023E+23, 6.023E+23)
-        ); 
+        );
     }
 
     /**
@@ -76,14 +76,14 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
     {
         $fundamentalConstants = new \Polymath\Physics\FundamentalConstants\FundamentalConstants();
         $result = $fundamentalConstants->getEarthGravity($g);
-        $this->assertEquals($result, $expected, 'Assert gravitational acceleration g on earth in meters per second squared'); 
+        $this->assertEquals($result, $expected, 'Assert gravitational acceleration g on earth in meters per second squared');
     }
 
     public function getTestGetEarthGravityData($g)
     {
         return array(
             array(9.81, 9.81) // m/sec squared
-        ); 
+        );
     }
 }
 
