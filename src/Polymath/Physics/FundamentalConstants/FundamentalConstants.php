@@ -14,6 +14,11 @@ class FundamentalConstants
         return 6.62606957 * bcpow(10, -34);
     }
 
+    public function getPlanckLength($p)
+    {
+        return 1.616199 * bcpow(10, -35);
+    }
+
     public function getAvogadro()
     {
         return 6.023E+23;

@@ -49,6 +49,32 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Planck Length (in meters)
+     * The Planck length is defined from three fundamental
+     * physical constants: the speed of light in a vacuum,
+     * Planck's constant, and the gravitational constant.
+     *
+     * Note: Any length shorter than this "makes no physical sense"
+     *
+     * @param $p = Planck Length (meters)
+     * @return $p
+     * @dataProvider getTestGetPlanckLengthData
+     **/
+    public function testGetPlanckLength($p, $expected)
+    {
+        $fundamentalConstants = new \Polymath\Physics\FundamentalConstants\FundamentalConstants();
+        $result = $fundamentalConstants->getPlanckLength($p, $expected);
+        $this->assertEquals($result, $expected, 'Assert Planck Length p in meters');
+    }
+
+    public function getTestGetPlanckLengthData($p)
+    {
+        return array(
+            array(1.616199 * bcpow(10, -35), -0.0000000000000000000000000000000000001616199)
+        );
+    }
+
+    /**
      * Avogadro's Number
      *
      * @dataProvider getTestGetAvogadroData
