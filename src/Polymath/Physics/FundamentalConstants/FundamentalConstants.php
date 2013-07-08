@@ -24,7 +24,12 @@ class FundamentalConstants
         return 6.023E+23;
     }
 
-    public function getEarthGravity()
+    public function getGravitationalConstant($G)
+    {
+        return 6.67384 * bcpow(10, -11); // m^3 kg/1 s/2
+    }
+
+    public function getEarthGravity($g)
     {
         return 9.81; // in meters per second squared
     }

@@ -94,6 +94,27 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Gravitational Constant (m^3 kg/1 s/2)
+     *
+     * @param $G = Gravitational Constant (m^3 kg/1 s/2)
+     * @return $G
+     * @dataProvider getTestGetGravitationalConstantData
+     **/
+    public function testGetGravitationalConstant($G, $expected)
+    {
+        $fundamentalConstants = new \Polymath\Physics\FundamentalConstants\FundamentalConstants();
+        $result = $fundamentalConstants->getGravitationalConstant($G);
+        $this->assertEquals($result, $expected, 'Assert the gravitational constant G in meters cubed times kilograms per single unit times seconds squared.');
+    }
+
+    public function getTestGetGravitationalConstantData($g)
+    {
+        return array(
+            array(6.67384E-11, 6.67384E-11)
+        );
+    }
+
+    /**
      * Gravitational acceleration on earth (g) in m/sec squared
      *
      * @dataProvider getTestGetEarthGravityData
@@ -111,5 +132,6 @@ class FundamentalConstantsTest extends PHPUnit_Framework_TestCase
             array(9.81, 9.81) // m/sec squared
         );
     }
+
 }
 
