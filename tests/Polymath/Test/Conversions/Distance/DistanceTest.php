@@ -149,7 +149,7 @@ class DistanceTest extends PHPUnit_Framework_TestCase
         return array(
             array(1, 5878499810000.0),
             array(7, 41149498670000.0),
-            array(13.7, 80535447397000.0) // 13.7 billion years old: The approximated age of our universe.
+            array(13.7 * bcpow(10, 9), 8.0535447397E+22) // 13.7 billion years old: The approximated age of our universe.
         );
     }
 }
